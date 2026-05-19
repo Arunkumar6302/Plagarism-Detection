@@ -27,6 +27,8 @@ const Header = ({ activeTab, setActiveTab, isAuth, onLogout }) => {
           <img 
             src="/logo.jpg" 
             alt="Shnoor Logo" 
+            width="45"
+            height="45"
             style={{ 
               height: '45px', 
               width: '45px', 

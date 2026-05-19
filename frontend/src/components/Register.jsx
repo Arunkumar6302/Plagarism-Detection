@@ -36,8 +36,9 @@ const Register = ({ setAuth, setActiveTab }) => {
         {error && <p style={{ color: 'red', marginBottom: '1rem' }}>{error}</p>}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Email</label>
+            <label htmlFor="register-email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Email</label>
             <input 
+              id="register-email"
               type="email" 
               value={email} 
               onChange={e => setEmail(e.target.value)} 
@@ -46,8 +47,9 @@ const Register = ({ setAuth, setActiveTab }) => {
             />
           </div>
           <div>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Password</label>
+            <label htmlFor="register-password" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Password</label>
             <input 
+              id="register-password"
               type="password" 
               value={password} 
               onChange={e => setPassword(e.target.value)} 

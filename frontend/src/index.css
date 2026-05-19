@@ -1,6 +1,6 @@
 :root {
-  --primary: #f3a412; /* Shnoor Orange */
-  --primary-dark: #d98c0b;
+  --primary: #b45309; /* WCAG Accessible Shnoor Orange */
+  --primary-dark: #92400e;
   --bg: #eef2f6; /* Light gray-blue background */
   --header-bg: #0b1120; /* Dark navy header */
   --card-bg: #ffffff;

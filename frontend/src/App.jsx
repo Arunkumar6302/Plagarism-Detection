@@ -1,15 +1,17 @@
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
-import Scanner from './components/Scanner';
-import ResultCard from './components/ResultCard';
-import History from './components/History';
-import About from './components/About';
-import Features from './components/Features';
-import Help from './components/Help';
-import Login from './components/Login';
-import Register from './components/Register';
-import Terms from './components/Terms';
-import Privacy from './components/Privacy';
-import { useState, useEffect } from 'react';
+
+// Lazy load heavy components for better Lighthouse performance (Code Splitting)
+const Scanner = lazy(() => import('./components/Scanner'));
+const ResultCard = lazy(() => import('./components/ResultCard'));
+const History = lazy(() => import('./components/History'));
+const About = lazy(() => import('./components/About'));
+const Features = lazy(() => import('./components/Features'));
+const Help = lazy(() => import('./components/Help'));
+const Login = lazy(() => import('./components/Login'));
+const Register = lazy(() => import('./components/Register'));
+const Terms = lazy(() => import('./components/Terms'));
+const Privacy = lazy(() => import('./components/Privacy'));
 
 function App() {
   const [result, setResult] = useState(null);
@@ -81,7 +83,9 @@ function App() {
           </p>
         </div>
         
-        {renderContent()}
+        <Suspense fallback={<div style={{ textAlign: 'center', padding: '3rem' }}>Loading application...</div>}>
+          {renderContent()}
+        </Suspense>
         
       </main>
     </div>
