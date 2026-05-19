@@ -1,0 +1,30 @@
+{
+  "aiComments": [
+    { "pattern": "^\\s*\\/\\/\\s*(Step \\d|First|Next|Finally|Return the|Check if|Initialize|Create a|Iterate through|Append the)", "flags": "gim", "weight": 15 },
+    { "pattern": "^\\s*\\/\\*\\*\\s*[\\s\\S]*?\\*\\/", "flags": "gm", "weight": 15 },
+    { "pattern": "^\\s*#\\s*(Step \\d|First|Next|Finally|Return the|Check if|Initialize|Create a|Iterate through|Append the)", "flags": "gim", "weight": 15 },
+    { "pattern": "^\\s*\"\"\"[\\s\\S]*?\"\"\"", "flags": "gm", "weight": 15 }
+  ],
+  "humanComments": [
+    { "pattern": "^\\s*\\/\\/\\s*todo:?", "flags": "gim", "weight": 20 },
+    { "pattern": "^\\s*\\/\\/\\s*fixme:?", "flags": "gim", "weight": 20 },
+    { "pattern": "^\\s*\\/\\/\\s*hack:", "flags": "gim", "weight": 20 },
+    { "pattern": "^\\s*\\/\\/\\s*console\\.log", "flags": "gim", "weight": 20 },
+    { "pattern": "^\\s*#\\s*todo:?", "flags": "gim", "weight": 20 }
+  ],
+  "aiStructure": [
+    { "pattern": "const\\s+\\w+\\s*=\\s*\\([^)]*\\)\\s*=>", "flags": "g", "weight": 10 },
+    { "pattern": "try\\s*\\{\\s*[\\s\\S]*?\\}\\s*catch\\s*\\(\\w+\\)\\s*\\{\\s*console\\.error\\([^)]+\\);\\s*\\}", "flags": "g", "weight": 10 },
+    { "pattern": "Array\\.from\\(", "flags": "g", "weight": 10 },
+    { "pattern": "\\.reduce\\(", "flags": "g", "weight": 10 },
+    { "pattern": "Object\\.entries", "flags": "g", "weight": 10 }
+  ],
+  "humanStructure": [
+    { "pattern": "console\\.log\\(['\"`](here|test|wtf|debug|123)['\"`]\\)", "flags": "gim", "weight": 10 },
+    { "pattern": "let\\s+\\w+\\s*=\\s*\\[\\]", "flags": "g", "weight": 10 },
+    { "pattern": "for\\s*\\(\\s*let\\s+i\\s*=\\s*0", "flags": "g", "weight": 10 }
+  ],
+  "humanVariables": [
+    { "pattern": "\\b(res|req|err|evt|obj|arr|temp|foo|bar|baz)\\b", "flags": "g", "weight": 15 }
+  ]
+}
